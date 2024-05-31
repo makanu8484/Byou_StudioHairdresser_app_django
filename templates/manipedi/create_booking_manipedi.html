@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %} Realizeza o programare Manichiura & Pedichiura {% endblock %}
+
+{% block content %}
+    
+    <div class="container-fluid" style="background:dimgrey">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 gy-4">
+                <div class="card">
+
+                    <div class="card-header" style="background: cornflowerblue">
+                        <h1 class="text-center">Realizeaza o programare</h1>
+                    </div>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="card-body" style="background: lightseagreen">
+                            {{ form }}
+                        </div>
+                        <div class="card-footer text-center" style="background: lightskyblue">
+                            <button type="submit" class="btn btn-outline-success">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

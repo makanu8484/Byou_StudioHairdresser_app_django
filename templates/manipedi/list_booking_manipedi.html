@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %} Lista programari {% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Full name</th>
+                            <th>Booking Date</th>
+                            <th>Booking Time</th>
+                            <th>Notes</th>
+                            <th>Created at</th>
+                            <th>Update at</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for list in all_list_manipedi %}
+                            <tr>
+                                <td>{{ list.full_name }}</td>
+                                <td>{{ list.booking_date|date:"d-m-Y" }}</td>
+                                <td>{{ list.booking_time|time:"H:i:s" }}</td>
+                                <td>{{ list.notes }}</td>
+                                <td>{{ list.created_at|date:"d-m-Y H:i:s" }}</td>
+                                <td>{{ list.updated_at|date:"d-m-Y H:i:s" }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}   

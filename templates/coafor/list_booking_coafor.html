@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title %} Lista rezrvari coafor {% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 gy-3">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Full name</th>
+                        <th>Booking Date</th>
+                        <th>Booking Time</th>
+                        <th>Notes</th>
+                        <th>Created at</th>
+                        <th>Update at</th>
+                        <th>Update</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for rezervare in all_list_of_coafor %}
+                        <tr>
+                            <td>{{ rezervare.full_name }}</td>
+                            <td>{{ rezervare.booking_date|date:"d-m-Y" }}</td>
+                            <td>{{ rezervare.booking_time|time:"H:i:s" }}</td>
+                            <td>{{ rezervare.notes }}</td>
+                            <td>{{ rezervare.created_at|date:"d-m-Y H:i:s" }}</td>
+                            <td>{{ rezervare.updated_at|date:"d-m-Y H:i:s" }}</td>
+                            
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-danger dropdown-toggle" type="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                        Update booking
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="{% url 'update_booking_coafor' rezervare.id %}">Update</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'delete_booking_coafor' rezervare.id %}">Delete</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'details_booking_coafor' rezervare.id %}">Details booking</a></li>
+                                        
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}   
