@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %} Coafor rezervare details {% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="card text-center">
+            <div class="card-header">
+                Coafor booking details
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ coafor.full_name }}</h5>
+                <p class="card-text"> Booking date: {{ coafor.booking_date }} - Booking time: {{ coafor.booking_time }}<br>
+                    Notes: {{ coafor.notes }}</p>
+                <a href="{% url 'home' %}" class="btn btn-primary">Cancel</a>
+            </div>
+            
+            <div class="card-footer text-body-secondary">
+                Creat la: {{ coafor.created_at|date:'d-m-Y H:i:s' }} /
+                Update la: {{ coafor.updated_at|date:'d-m-Y H:i:s' }}
+            </div>
+        </div>
+
+
+    </div>
+{% endblock %}
