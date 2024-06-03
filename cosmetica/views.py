@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, ListView, UpdateView
+from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 
 from cosmetica.forms import CosmeticaForm, CosmeticaUpdateForm
 from cosmetica.models import Cosmetica
@@ -22,6 +22,12 @@ class CosmeticaUpdateView(UpdateView):
     template_name = 'cosmetica/update_booking_cosmetica.html'
     model = Cosmetica
     form_class = CosmeticaUpdateForm
+    success_url = reverse_lazy('list_cosmetica')
+
+
+class CosmeticaDeleteView(DeleteView):
+    template_name = 'cosmetica/delete_booking_cosmetica.html'
+    model = Cosmetica
     success_url = reverse_lazy('list_cosmetica')
 
 

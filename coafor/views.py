@@ -42,6 +42,9 @@ class CoaforDetailView(DetailView):
     template_name = 'coafor/details_booking_coafor.html'
     model = Coafor
 
+    def get_queryset(self):
+        return Coafor.objects.all()
+
 
 
 
