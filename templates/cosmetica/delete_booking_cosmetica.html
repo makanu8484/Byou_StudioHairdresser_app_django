@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Detele booking cosmetica	
+{% endblock %}
+
+{% block content %}
+	<div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 gy-5">
+                <div class="card">
+                    <div class="card-header " style="background: skyblue">
+                        <h3 class="text-center">Sterge o programare cosmetica</h3>
+                    </div>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="card-body" style="background: dimgrey">
+                            <h3 class="text-center" style="color: deeppink">Sunteti sigur ca doriti sa stergeti programare {{ list.id }} ?</h3>
+                        </div>
+                        <div class="card-header text-center" style="background: skyblue">
+                            <button type="submit" class="btn btn-outline-danger">Yes</button>
+                            <a href="{% url 'list_cosmetica' %}" class="btn btn-outline-success">No</a>
+                        </div>
+                        
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+{% endblock %}

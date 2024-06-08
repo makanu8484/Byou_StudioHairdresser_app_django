@@ -7,26 +7,42 @@
             <div class="col-md-12">
                 <table class="table">
                     <thead>
-                        <tr>
-                            <th>Full name</th>
-                            <th>Booking Date</th>
-                            <th>Booking Time</th>
-                            <th>Notes</th>
-                            <th>Created at</th>
-                            <th>Update at</th>
-                        </tr>
+                    <tr>
+                        <th>Full name</th>
+                        <th>Booking Date</th>
+                        <th>Booking Time</th>
+                        <th>Notes</th>
+                        <th>Created at</th>
+                        <th>Update at</th>
+                        <th>Update</th>
+                    </tr>
                     </thead>
+                
                     <tbody>
-                        {% for list in all_list_manipedi %}
-                            <tr>
-                                <td>{{ list.full_name }}</td>
-                                <td>{{ list.booking_date|date:"d-m-Y" }}</td>
-                                <td>{{ list.booking_time|time:"H:i:s" }}</td>
-                                <td>{{ list.notes }}</td>
-                                <td>{{ list.created_at|date:"d-m-Y H:i:s" }}</td>
-                                <td>{{ list.updated_at|date:"d-m-Y H:i:s" }}</td>
-                            </tr>
-                        {% endfor %}
+                    {% for list in all_list_manipedi %}
+                        <tr>
+                            <td>{{ list.full_name }}</td>
+                            <td>{{ list.booking_date|date:"d-m-Y" }}</td>
+                            <td>{{ list.booking_time|time:"H:i:s" }}</td>
+                            <td>{{ list.notes }}</td>
+                            <td>{{ list.created_at|date:"d-m-Y H:i:s" }}</td>
+                            <td>{{ list.updated_at|date:"d-m-Y H:i:s" }}</td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-danger dropdown-toggle" type="button"
+                                            data-bs-toggle="dropdown"  aria-expanded="false">
+                                        Update booking
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="{% url 'update_booking_manipedi' list.id %}">Update</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'delete_booking_manipedi' list.id %}">Delete</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'details_booking_manipedi' list.id %}">Details booking</a></li>
+                                    </ul>
+                                </div>
+
+                            </td>
+                        </tr>
+                    {% endfor %}
                     </tbody>
                 </table>
             </div>

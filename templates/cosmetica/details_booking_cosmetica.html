@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Details booking cosmetica
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="card text-center">
+            <div class="card-header" style="background: skyblue">
+                <h4>Details booking cosmetica</h4>
+            </div>
+            <div class="card-body" style="background: lightseagreen">
+                <h3 class="card-title">Full name: {{ cosmetica.full_name }}</h3>
+                <p class="card-text">Booking date: {{ cosmetica.booking_date }}, Booking time: {{ cosmetica.booking_time }},<br/>
+                    <br>
+                Descriere: {{ cosmetica.notes  }}</p>
+                <a href="{% url 'list_cosmetica' %}" class="btn btn-primary">Cancel</a>
+            </div>
+            <div class="card-footer text-body-secondary" style="background: skyblue">
+                Creat la: {{ cosmetica.created_at }}; Update la: {{ cosmetica.updated_at }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

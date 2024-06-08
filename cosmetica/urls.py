@@ -7,5 +7,6 @@ urlpatterns = [
     path('list_cosmetica', views.CosmeticaListView.as_view(), name='list_cosmetica'),
     path('update_booking_cosmetica/<int:pk>/', views.CosmeticaUpdateView.as_view(), name='update_booking_cosmetica'),
     path('delete_booking_cosmetica/<int:pk>/', views.CosmeticaDeleteView.as_view(), name='delete_booking_cosmetica'),
+    path('detail_booking_cosmetica/<int:pk>/', views.CosmeticaDetailView.as_view(), name='detail_booking_cosmetica'),
 
 ]

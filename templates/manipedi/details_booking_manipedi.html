@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %} Details booking manipedi {% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="card text-center">
+            <div class="card-header" style="background: skyblue">
+                <h2>Detaili programare Manichiura & Pedichiura</h2>
+            </div>
+            <div class="card-body" style="background: violet">
+                <h3 class="card-title">Full name: {{ manipedi.full_name }}</h3>
+                <p class="card-text">Booking date: {{ manipedi.booking_date }}; Booking time: {{ manipedi.booking_time }} <br/>
+                    <br>
+                Descriere: {{ manipedi.notes }}</p>
+                <a href="{% url 'list_booking_manipedi' %}" class="btn btn-primary">Cancel</a>
+            </div>
+            <div class="card-footer text-body-secondary" style="background: skyblue">
+                Creat la: {{ manipedi.created_at }}
+                Update la : {{ manipedi.updated_at }}
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

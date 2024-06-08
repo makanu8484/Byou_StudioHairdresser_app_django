@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %} Update booking manipedi {% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 gy-5">
+                <div class="card">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="card-header" style="background: skyblue">
+                            <h3 class="text-center">Update booking Manichiura & Pedichiura</h3>
+                        </div>
+                        <div class="card-body" style="background: darkkhaki">
+                            {{ form }}
+                        </div>
+                        <div class="card-footer text-center">
+                            <button type="submit" class="btn btn-outline-danger">Update</button>
+                            <a t href="{% url 'list_booking_manipedi' %}" class="btn btn-outline-success">Cancel</a>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

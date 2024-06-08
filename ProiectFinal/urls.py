@@ -16,6 +16,7 @@ Including another URLconf
 """
 
 from django.contrib import admin
+from django.contrib.auth import views
 from django.urls import path, include
 
 
@@ -26,5 +27,7 @@ urlpatterns = [
     path("", include("frizerie.urls")),
     path("", include("manipedi.urls")),
     path("", include("cosmetica.urls")),
+    path("login/", views.LoginView.as_view(), name="login"),
+    path("", include("django.contrib.auth.urls")),
 
 ]

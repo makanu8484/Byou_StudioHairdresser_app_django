@@ -34,7 +34,8 @@
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="{% url 'update_booking_cosmetica' list.id %}">Update</a></li>
-                                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'delete_booking_cosmetica' list.id %}">Delete</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'detail_booking_cosmetica' list.id %}">Details booking </a></li>
                                         
                                     </ul>
                                 </div>

@@ -6,6 +6,10 @@
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+    
+    
+    {% if user.is_authenticated %}
+    
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
@@ -40,9 +44,9 @@
                         <li><a class="dropdown-item" href="{% url 'list_booking_frizerie' %}">Lista programari</a></li>
                     </ul>
                 </li>
-                
-                
-                 <li class="nav-item dropdown">
+
+
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                        aria-expanded="false">
                         Manichiura & Pedichiura
@@ -53,25 +57,38 @@
                     </ul>
                 </li>
 
-                
-                 <li class="nav-item dropdown">
+
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                        aria-expanded="false">
                         Cosmetica
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{% url 'create_booking_cosmetica' %}">Fa o programare</a></li>
+                        <li><a class="dropdown-item" href="{% url 'create_booking_cosmetica' %}">Fa o programare</a>
+                        </li>
                         <li><a class="dropdown-item" href="{% url 'list_cosmetica' %}">Lista programari</a></li>
                     </ul>
                 </li>
-
-                
-
+                {% endif %}
             </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+
+        
+             {% if user.is_authenticated %}
+
+                <form method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-outline-primary">Logout, {{ user.username }}</button>
+                </form>
+
+            {% else %}
+                 
+            <div>
+                <a href="{% url 'login' %}" class="btn btn-outline-danger">Login</a>
+                <a href="" class="btn btn-outline-success">Signup</a>
+            </div>
+           
+            {% endif %}
+        
         </div>
     </div>
 </nav>
