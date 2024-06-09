@@ -3,15 +3,15 @@
 {% block title %} Lista programari cosmetica {% endblock %}
 
 {% block content %}
-    <div class="container-fluid">
+    <div class="container-fluid backgroond">
         <div class="row">
-            <div class="col-md-12 gy-5">
+            <div class="col-sm-12 col-md-4 offset-md-7 col-lg-6 offset-lg-3">
             <div class="text">
                 <h2 class="text-center">Lista programari Cosmetica & Makeup</h2>
             </div>
             <br/> <br/>
                 <table class="table table-success table-striped-columns
-        table table-bordered border-success table-group-divider ">
+        table table-bordered border-success table-group-divider">
                     <thead>
                     <tr>
                         <th>Full name</th>
@@ -34,7 +34,7 @@
                             <td>{{ list.updated_at|date:"d-m-Y H:i:s" }}</td>
                             <td>
                                 <div class="dropdown">
-                                    <button class="btn btn-danger dropdown-toggle" type="button"
+                                    <button class="btn btn-outline dropdown-toggle btn_cosmetica" type="button"
                                             data-bs-toggle="dropdown" aria-expanded="false">
                                         Update booking
                                     </button>
@@ -53,5 +53,42 @@
             </div>
         </div>
     </div>
-    <img src="{% static 'cosmetica/poza_2.jpg' %}" class="cosmetica_backgroond">
-{% endblock %}   
+    
+    <style>
+    .btn_cosmetica{
+        width: 145px;
+        height: 40px;
+        background: rosybrown;
+        border: none;
+        margin-top: 30px;
+        font-size: 15px;
+        font-weight: bolder;
+        border-radius: 20px;
+        cursor: pointer;
+        color: red;
+        transition: 0.5s;
+            
+    }
+    
+    .btn_cosmetica:hover{
+        background: red;
+        color: black;
+    }
+    
+    .text{
+        color: green;
+        margin-top: 30px;
+        animation: text;
+        animation-duration: 2s;
+    }
+    
+    @keyframes text{
+        from {color: green;}
+        to {color: black;}
+    }
+        
+    
+    </style>
+{% endblock %}  
+
+
