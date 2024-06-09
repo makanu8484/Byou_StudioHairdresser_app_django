@@ -10,7 +10,7 @@ from coafor.models import Coafor
 class CoaforCreateView(CreateView):
     template_name = 'coafor/create_booking_coafor.html'
     form_class = CoaforForm
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('list_booking_coafor')
 
 
 class CoaforListView(ListView):

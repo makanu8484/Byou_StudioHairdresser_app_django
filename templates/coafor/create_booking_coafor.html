@@ -1,25 +1,27 @@
 {% extends 'base.html' %}
-{% load static%}
+{% load static %}
 
 {% block title %} Creaza o noua rezervare {% endblock %}
 
 {% block content %}
-    
-    <div class="container-fluid" >
-        <div class="row">
-            <div class="col-md-6 offset-md-3 gy-4">
-                <div class="card">
 
-                    <div class="card-header" style="background: cornflowerblue">
-                        <h1 class="text-center">Realizeaza o programare coafor</h1>
+    <div class="container-fluid">
+        <div class="row" style="margin-top: 5vh">
+            <div class=" col-sm-12 col-md-6 offset-md-3">
+                <div class="card" style="background: transparent; box-sizing: border-box; border: 2px solid black;">
+
+                    <div class="card-header">
+                        <h1 class="text-center" style="color: green">Programare coafor</h1>
                     </div>
                     <form method="post">
                         {% csrf_token %}
-                        <div class="card-body" style="background: lightseagreen">
+                        <div class="card-body">
                             {{ form }}
                         </div>
-                        <div class="card-footer text-center" style="background: lightskyblue">
+                        <div class="card-footer text-center">
                             <button type="submit" class="btn btn-outline-success">Save</button>
+                            <a href="{% url 'home' %}" class="btn btn-outline-danger">Cancel</a>
+                            
                         </div>
                     </form>
                 </div>
@@ -27,4 +29,23 @@
         </div>
     </div>
     
+    <video src="{% static 'coafor_p1.mp4' %}" class=" img-fluid interactiv_coafor" type="video/mp4" controls
+           autoplay></video>
+
+    <style>
+        .interactiv_coafor {
+            max-width: 90%;
+            position: fixed;
+            left: 0;
+            top: 50px;
+            min-height: 100%;
+            min-width: 100%;
+            z-index: -1;
+        }
+
+        .interactiv_coafor {
+            background: rgba(0, 0, 0, 0.2) !important;
+
+        }
+    </style>
 {% endblock %}

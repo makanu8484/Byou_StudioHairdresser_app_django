@@ -9,15 +9,15 @@
             <div class="col-sm-12 col-md-4 offset-md-7 col-lg-2 offset-lg-9">
                 <div class="card" style="background: transparent">
 
-                    <div class="card-header top">
-                        <h2 class="text-center" style="color: rosybrown">Realizeaza o programare cosmetica</h2>
+                    <div class="card-header">
+                        <h2 class="text-center" style="color: purple">Programare cosmetica & makeup</h2>
                     </div>
-                    <form method="post" style="height: auto">
+                    <form method="post">
                         {% csrf_token %}
                         <div class="card-body">
                             {{ form }}
                         </div>
-                        <div class="card-footer text-center" style="background: transparent">
+                        <div class="card-footer text-center">
                             <button type="submit" class="btn btn-outline-success">Save</button>
                             <a href="{% url 'list_cosmetica' %}" class="btn btn-outline-danger">Cancel</a>   
                         </div>
@@ -27,6 +27,7 @@
         </div>
     </div>
     <video src="{% static 'cosmetica/makeup_1.mp4' %}" class="interactive" type="video/mp4"  autoplay loop muted></video>
+    
 <style>
 .interactive{
     max-width: 90%;
