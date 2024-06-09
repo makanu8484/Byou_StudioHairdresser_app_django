@@ -1,17 +1,19 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block title %} B'You Studio {% endblock %}
 
 {% block content %}
 
 
-    <div class="text-center">
-        <div class="container-fluid">
-            <img src="{% static 'poza_1.png' %}">
-            </div>
-            <br/>
-            <h1 class="text-center">Welcome to B'You Studio</h1>
-        </div>
-    </div>
+    <div class="container-fluid text-center video">
+        <video src="{% static 'video1.mp4' %}" class="interactive-img" type="video/mp4" controls autoplay></video>
 
+    </div>
 {% endblock %}
+
+<style>
+.interctive-img{
+    max-width: 90%;
+
+</style>

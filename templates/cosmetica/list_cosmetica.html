@@ -1,11 +1,17 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %} Lista programari cosmetica {% endblock %}
 
 {% block content %}
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12">
-                <table class="table">
+            <div class="col-md-12 gy-5">
+            <div class="text">
+                <h2 class="text-center">Lista programari Cosmetica & Makeup</h2>
+            </div>
+            <br/> <br/>
+                <table class="table table-success table-striped-columns
+        table table-bordered border-success table-group-divider ">
                     <thead>
                     <tr>
                         <th>Full name</th>
@@ -47,4 +53,5 @@
             </div>
         </div>
     </div>
+    <img src="{% static 'cosmetica/poza_2.jpg' %}" class="cosmetica_backgroond">
 {% endblock %}   

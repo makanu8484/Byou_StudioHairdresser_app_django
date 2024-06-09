@@ -19,6 +19,7 @@ from django.contrib import admin
 from django.contrib.auth import views
 from django.urls import path, include
 
+from users.forms import LoginUserForm
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -27,7 +28,8 @@ urlpatterns = [
     path("", include("frizerie.urls")),
     path("", include("manipedi.urls")),
     path("", include("cosmetica.urls")),
-    path("login/", views.LoginView.as_view(), name="login"),
+    path("login/", views.LoginView.as_view(form_class=LoginUserForm), name="login"),
     path("", include("django.contrib.auth.urls")),
+    path("", include("users.urls")),
 
 ]
