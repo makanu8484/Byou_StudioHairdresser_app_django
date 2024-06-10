@@ -9,7 +9,7 @@ from frizerie.models import Frizerie
 class FrizerieCreateView(CreateView):
     template_name = 'frizerie/create_booking_frizerie.html'
     form_class = FrizerieForm
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('list_booking_frizerie')
 
 
 class FrizerieListView(ListView):

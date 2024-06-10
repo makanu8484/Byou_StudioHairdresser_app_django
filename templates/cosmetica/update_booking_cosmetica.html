@@ -1,21 +1,22 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %} Update booking cosmetica {% endblock %}
 
 {% block content %}
-    <div class="container-fluid">
+    <div class="container-fluid local">
         <div class="row">
-            <div class="col-md-6 offset-md-3 gy-5">
-                <div class="card">
+            <div class=" col-sm-12 col-md-6 offset-md-5">
+                <div class="card" style="background: transparent; margin-top: 2vh; margin-left: 25px">
                     <div class="card-header">
                         <h1 class="text-center">Update booking cosmetica</h1>
                     </div>
                     <form method="post">
-                         {% csrf_token %}
+                        {% csrf_token %}
                         <div class="card-body">
                             {{ form }}
                         </div>
-                        <div class="card-footer text-center" >
+                        <div class="card-footer text-center">
                             <button type="submit" class="btn btn-outline-danger">Update</button>
                             <a href="{% url 'list_cosmetica' %}" class="btn btn-outline-success">Cancel</a>
                         </div>
@@ -24,5 +25,22 @@
             </div>
         </div>
     </div>
+    <img src="{% static 'cosmetica/poza4.png' %}" class="epilare">
+    <style>
+        .epilare {
+            max-width: 90%;
+            position: fixed;
+            left: 0px;
+            top: 50px;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
 
+        .local {
+            background: rgba(0, 0, 0, 0.2) !important;
+
+
+        }
+    </style>
 {% endblock %}

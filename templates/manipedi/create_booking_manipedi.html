@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %} Realizeza o programare Manichiura & Pedichiura {% endblock %}
 
 {% block content %}
-    
+
     <div class="container-fluid" style="background:dimgrey">
         <div class="row">
             <div class="col-md-6 offset-md-3 gy-4">
@@ -25,4 +26,16 @@
             </div>
         </div>
     </div>
+
+    <style>
+        .mani {
+            max-width: 90%;
+            position: fixed;
+            left: 0;
+            top: 50px;
+            min-height: 100%;
+            min-width: 100%;
+            z-index: -1;
+        }
+    </style>
 {% endblock %}
