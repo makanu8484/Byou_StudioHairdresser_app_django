@@ -5,7 +5,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12 gy-3">
-                <table class="table">
+               <table class="table table-success table-striped-columns">
                     <thead>
                     <tr>
                         <th>Full name</th>
@@ -30,14 +30,14 @@
                             
                             <td>
                                 <div class="dropdown">
-                                    <button class="btn btn-danger dropdown-toggle" type="button"
+                                    <button class="btn btn-success dropdown-toggle" type="button"
                                             data-bs-toggle="dropdown" aria-expanded="false">
                                         Update booking
                                     </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="{% url 'update_booking_coafor' rezervare.id %}">Update</a></li>
-                                        <li><a class="dropdown-item" href="{% url 'delete_booking_coafor' rezervare.id %}">Delete</a></li>
-                                        <li><a class="dropdown-item" href="{% url 'details_booking_coafor' rezervare.id %}">Details booking</a></li>
+                                    <ul class="dropdown-menu" style="background: mediumseagreen">
+                                        <li><a class="dropdown-item color" href="{% url 'update_booking_coafor' rezervare.id %}">Update</a></li>
+                                        <li><a class="dropdown-item color" href="{% url 'delete_booking_coafor' rezervare.id %}">Delete</a></li>
+                                        <li><a class="dropdown-item color" href="{% url 'details_booking_coafor' rezervare.id %}">Details booking</a></li>
                                         
                                     </ul>
                                 </div>
@@ -49,4 +49,12 @@
             </div>
         </div>
     </div>
+    
+    <style>
+    .color{
+        color: deeppink;
+        
+    }
+    </style>
+    
 {% endblock %}   

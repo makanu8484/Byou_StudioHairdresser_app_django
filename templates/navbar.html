@@ -1,6 +1,9 @@
+{% load static %}
 <nav class="navbar navbar-expand-lg bg-body-tertiary" style="padding:0">
     <div class="container-fluid" style="background: rosybrown; padding: 0.75rem">
-        <a class="navbar-brand" style="color: deeppink" href="{% url 'home' %}">B'You Studio</a>
+        <a class="navbar-brand" href="{% url 'home' %}">
+            <img src="{% static 'byou.png' %}" class="Logo">
+        </a>
 
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -14,23 +17,25 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url 'home' %}">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                         class="bi bi-house-door nav-style-costum" style="color: deeppink" viewBox="0 0 16 16">
-                        <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4z"/>
+                <a class="nav-link active" aria-current="page" href="{% url 'home' %}" style="width: 50px">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" fill="currentColor"
+                         class="bi bi-house-door nav-style-costum" style="color: deeppink" viewBox="0 0 15 15">
+                        <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4z"></path>
                     </svg>
                 </a>
             </li>
 
 
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown" style="font-family: Verdana,serif">
                 <a class="nav-link dropdown-toggle nav-style-costum" href="#" role="button" data-bs-toggle="dropdown"
                    aria-expanded="false">
                     Coafor
                 </a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="{% url 'create_booking_coafor' %}">Fa o programare</a></li>
-                    <li><a class="dropdown-item" href="{% url 'list_booking_coafor' %}">Lista programari</a></li>
+                <ul class="dropdown-menu" style="background: rosybrown">
+                    <li><a class="dropdown-item" href="{% url 'create_booking_coafor' %}" style="color: deeppink">Fa o
+                        programare</a></li>
+                    <li><a class="dropdown-item" href="{% url 'list_booking_coafor' %}" style="color: deeppink">Lista
+                        programari</a></li>
                 </ul>
             </li>
 
@@ -73,7 +78,7 @@
         {% endif %}
 
         </ul>
-    
+
 
         {% if user.is_authenticated %}
 
@@ -89,14 +94,14 @@
                     <ion-icon name="logo-google"></ion-icon>
                 </a>
             </div>
-   
+
 
             <form method="post" action="{% url 'logout' %}">
                 {% csrf_token %}
                 <button type="submit" class="btn btn-outline-success">
                     Logout, {{ user.username }}</button>
             </form>
-            
+
         {% else %}
 
 
@@ -106,7 +111,7 @@
             </div>
 
         {% endif %}
-       
+
         </div>
     </div>
 
@@ -120,6 +125,7 @@
             border-radius: 100px;
             color: white !important;
         }
+
         .Icons a {
             text-decoration: none;
             color: green;
@@ -131,12 +137,30 @@
             padding-right: 40px;
             padding-top: 1vh;
             transition: 0.4s;
-            
+
         }
 
-        .ion-icon:hover {
-            color: green;
+        .Icons a:hover {
+            color: white;
         }
+
+        .Logo {
+            width: 120px;
+            height: 50px;
+            mix-blend-mode: multiply;
+            margin-left: 50px;
+            animation-name: slideInLeft;
+            animation-duration: 3s;
+        }
+        @keyframes slideInLeft{
+            to{transform: translateX(100%)}
+            
+        }
+           
+
+       
         
+        
+
     </style>
 </nav>

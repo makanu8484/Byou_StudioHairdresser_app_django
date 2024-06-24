@@ -9,7 +9,7 @@ from cosmetica.models import Cosmetica
 class CosmeticaCreateView(CreateView):
     template_name = 'cosmetica/create_booking_cosmetica.html'
     form_class = CosmeticaForm
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('list_cosmetica')
 
 
 class CosmeticaListView(ListView):
