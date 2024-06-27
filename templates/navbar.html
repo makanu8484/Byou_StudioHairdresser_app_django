@@ -121,7 +121,7 @@
         }
 
         .nav-style-costum:hover {
-            background: #a37171;
+            background: palevioletred;
             border-radius: 100px;
             color: white !important;
         }
@@ -145,15 +145,20 @@
         }
 
         .Logo {
+            border: 2px solid deeppink;
+            border-radius: 20px;
             width: 120px;
             height: 50px;
             mix-blend-mode: multiply;
             margin-left: 50px;
-            animation-name: slideInLeft;
-            animation-duration: 3s;
+            animation-name: glow;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            
         }
-        @keyframes slideInLeft{
-            to{transform: translateX(100%)}
+        @keyframes glow{
+            50%{box-shadow: 0 0 50px deeppink;
+            }
             
         }
            

@@ -7,24 +7,21 @@
 
 
     <div class="container-fluid text-center video">
-        <video src="{% static 'video1.mp4' %}" class="interactive-img" type="video/mp4" controls autoplay></video>
+        <video src="{% static 'video_1.mp4' %}" class="interactive-img" type="video/mp4" controls autoplay></video>
 
     </div>
+    
+    
+    <style>
+    .interactive-img {
+        background-size: contain;
+        
+       
+    }
+    
+    
+    
+    
+</style>
 {% endblock %}
 
-<style>
-    .interactive-img {
-        
-        position: fixed;
-        left: 0;
-        top: 50px;
-        min-height: 50%;
-        min-width: 100%;
-        z-index: -1;
-    }
-    .interactive-img
-    {
-        background: rgba(0, 0, 0, 0.2) !important;
-    }
-
-</style>

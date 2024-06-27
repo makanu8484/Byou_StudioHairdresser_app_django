@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "home",
     "coafor",
-    "widget_tweaks",
     "frizerie",
     "manipedi",
     "cosmetica",
