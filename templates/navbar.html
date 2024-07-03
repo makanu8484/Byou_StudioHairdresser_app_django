@@ -1,8 +1,8 @@
 {% load static %}
-<nav class="navbar navbar-expand-lg bg-body-tertiary" style="padding:0">
-    <div class="container-fluid" style="background: rosybrown; padding: 0.75rem">
+<nav class="navbar navbar-expand-lg bg-body-tertiary" style="padding: 0">
+    <div class="container-fluid navbar">
         <a class="navbar-brand" href="{% url 'home' %}">
-            <img src="{% static 'byou.png' %}" class="Logo">
+          <img src="{% static 'byou.png' %}" alt="" class="Logo">
         </a>
 
 
@@ -18,10 +18,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{% url 'home' %}" style="width: 50px">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" fill="currentColor"
-                         class="bi bi-house-door nav-style-costum" style="color: deeppink" viewBox="0 0 15 15">
-                        <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4z"></path>
-                    </svg>
+                    
                 </a>
             </li>
 
@@ -83,14 +80,14 @@
         {% if user.is_authenticated %}
 
             <div class="Icons" style="">
-                <a href="#">
+                <a href="https://www.facebook.com/p/B-You-Studio-100064144145617/?locale=ro_RO">
                     <ion-icon name="logo-facebook"></ion-icon>
                 </a>
-                <a href="#">
+                <a href="https://www.instagram.com/byou_salon/">
                     <ion-icon name="logo-instagram"></ion-icon>
                 </a>
 
-                <a href="#">
+                <a href="https://aushopping.ro/aushopping-oradea/articole/b-you-studio-oaza-ta-de-frumusete-si-relaxare">
                     <ion-icon name="logo-google"></ion-icon>
                 </a>
             </div>
@@ -114,16 +111,18 @@
 
         </div>
     </div>
-
-    <style>
+        
+   
+</nav>
+ <style>
         .nav-style-costum {
-            transition: all 0.2s;
+            transition: all 0.3s;
         }
 
         .nav-style-costum:hover {
             background: palevioletred;
             border-radius: 100px;
-            color: white !important;
+            color: black;
         }
 
         .Icons a {
@@ -141,31 +140,43 @@
         }
 
         .Icons a:hover {
-            color: white;
+            color: blue;
         }
 
         .Logo {
             border: 2px solid deeppink;
             border-radius: 20px;
             width: 120px;
-            height: 50px;
+            height: 60px;
             mix-blend-mode: multiply;
             margin-left: 50px;
             animation-name: glow;
             animation-duration: 5s;
             animation-iteration-count: infinite;
             
+
         }
-        @keyframes glow{
-            50%{box-shadow: 0 0 50px deeppink;
+        @keyframes glow {
+            50% {
+                box-shadow: 0 0 50px deeppink;
             }
+        }
+        .navbar{
+            background: rosybrown;
+          
+           
+           
+         
+         
+            
+           
+            
+            
+            
+            
+            
             
         }
-           
-
-       
         
-        
-
     </style>
-</nav>
+
