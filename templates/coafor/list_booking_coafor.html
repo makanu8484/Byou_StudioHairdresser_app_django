@@ -1,10 +1,14 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %} Lista rezrvari coafor {% endblock %}
 
 {% block content %}
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12 gy-3">
+            <div class="col-sm-12 col-md-12 gy-3">
+            <div class="text">
+                <h3 class="text-center" style="color: red; font-weight: bolder">Lista programari Coafor</h3>
+            </div>
                <table class="table table-success table-striped-columns">
                     <thead>
                     <tr>
@@ -50,4 +54,9 @@
         </div>
     </div>
     
+   <style>
+   body{
+       background-color: gray;
+       }
+   </style>
 {% endblock %}   

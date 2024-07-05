@@ -7,8 +7,8 @@
 
     <div class="container-fluid">
         <div class="row" style="margin-top: 5vh">
-            <div class="col-sm-12 col-md-6 offset-md-3">
-                <div class="card" style="background: transparent; box-sizing: border-box; border: 2px solid black;">
+            <div class="col-sm-12 col-md-6 offset-md-3 gy-5">
+                <div class="card" style="background: transparent; box-sizing: border-box; border: 2px solid black">
 
                     <div class="card-header">
                         <h1 class="text-center" style="color: green">Programare coafor</h1>
@@ -29,21 +29,22 @@
         </div>
     </div>
     
-    <video src="{% static 'coafor1.mp4' %}" class=" img-fluid interactiv_coafor" type="video/mp4" controls
-           autoplay></video>
+    <video src="{% static 'coafor1.mp4' %}" class=" img-fluid inter" type="video/mp4" controls
+           autoplay muted></video>
 
     <style>
-        .interactiv_coafor {
+        .inter {
+            display: flex;
             max-width: 90%;
             position: fixed;
             left: 0;
-            top: 50px;
+            top: 0;
             min-height: 100%;
             min-width: 100%;
             z-index: -1;
         }
 
-        .interactiv_coafor {
+        .inter {
             background: rgba(0, 0, 0, 0.2) !important;
 
         }

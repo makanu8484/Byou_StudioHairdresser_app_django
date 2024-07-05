@@ -1,21 +1,21 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %} Coafor rezervare details {% endblock %}
 
 {% block content %}
     <div class="container-fluid">
-        <div class="card text-center">
-            <div class="card-header">
-                Coafor booking details
+        <div class="card text-center card">
+            <div class="card-header header">
+                <h2>Coafor booking details</h2>
             </div>
             <div class="card-body">
                 <h5 class="card-title">{{ coafor.full_name }}</h5>
                 <p class="card-text"> Booking date: {{ coafor.booking_date }} - Booking time: {{ coafor.booking_time }}<br>
                     Notes: {{ coafor.notes }}</p>
-                <a href="{% url 'home' %}" class="btn btn-primary">Cancel</a>
+                <a href="{% url 'home' %}" class="btn btn-danger">Cancel</a>
             </div>
             
-            <div class="card-footer text-body-secondary">
+            <div class="card-footer text-body-secondary" style="font-weight: bolder">
                 Creat la: {{ coafor.created_at|date:'d-m-Y H:i:s' }} /
                 Update la: {{ coafor.updated_at|date:'d-m-Y H:i:s' }}
             </div>
@@ -23,4 +23,23 @@
 
 
     </div>
+    
+    <style>
+   
+    .card{
+        margin-top: 50px;
+        display: flex;
+        border: 3px solid black;
+        background: grey;
+        font-weight: bolder;
+       
+    }
+    body{
+        background-color: gray;
+       
+    }
+    
+    </style>
+    
+    
 {% endblock %}

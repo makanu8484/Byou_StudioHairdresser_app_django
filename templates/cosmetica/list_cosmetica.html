@@ -5,13 +5,12 @@
 {% block content %}
     <div class="container-fluid backgroond">
         <div class="row">
-            <div class="col-sm-12 col-md-4 offset-md-7 col-lg-12 offset-lg-0">
+            <div class="col-sm-12 col-md-12 gy-0">
             <div class="text">
-                <h2 class="text-center">Lista programari Cosmetica & Makeup</h2>
+                <h3 class="text-center">Lista programari Cosmetica & Makeup</h3>
             </div>
-            <br/> <br/>
-                <table class="table table-success table-striped-columns
-        table table-bordered border-success table-group-divider">
+            
+                <table class="table table-success table-striped-columns">
                     <thead>
                     <tr>
                         <th>Full name</th>
@@ -34,11 +33,11 @@
                             <td>{{ list.updated_at|date:"d-m-Y H:i:s" }}</td>
                             <td>
                                 <div class="dropdown">
-                                    <button class="btn btn-outline dropdown-toggle btn_cosmetica" type="button"
+                                    <button class="btn btn-success dropdown-toggle btn_cosmetica" type="button"
                                             data-bs-toggle="dropdown" aria-expanded="false">
                                         Update booking
                                     </button>
-                                    <ul class="dropdown-menu">
+                                    <ul class="dropdown-menu" style="background: mediumseagreen">
                                         <li><a class="dropdown-item" href="{% url 'update_booking_cosmetica' list.id %}">Update</a></li>
                                         <li><a class="dropdown-item" href="{% url 'delete_booking_cosmetica' list.id %}">Delete</a></li>
                                         <li><a class="dropdown-item" href="{% url 'detail_booking_cosmetica' list.id %}">Details booking </a></li>
@@ -55,39 +54,26 @@
     </div>
     
     <style>
-    .btn_cosmetica{
-        width: 145px;
-        height: 40px;
-        background: green;
-        border: none;
-        margin-top: 30px;
-        font-size: 15px;
-        font-weight: bolder;
-        border-radius: 20px;
-        cursor: pointer;
-        color: black;
-        transition: 0.4s;
-            
-    }
     
-    .btn_cosmetica:hover{
-        background: yellow;
-        color: orangered;
-    }
     
     .text{
         color: green;
-        margin-top: 30px;
+        margin-top: 20px;
         animation: text;
-        animation-duration: 10s;
+        animation-duration: 20s;
         transition: 1s;
+       
     }
     
     @keyframes text{
         from {color: green;}
-        to {color: black;}
+        to {color: tomato;}
+        to {color: saddlebrown}
+       
     }
-        
+    body { 
+        background: grey
+    }
     
     </style>
 {% endblock %}  

@@ -1,28 +1,55 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %} Realizeza o programare {% endblock %}
 
 {% block content %}
-    
-    <div class="container-fluid" style="background:dimgrey">
+
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-md-6 offset-md-3 gy-4">
+            <div class="col-md-6 offset-md-3 gy-5">
                 <div class="card">
 
-                    <div class="card-header" style="background: cornflowerblue">
+                    <div class="card-header">
                         <h1 class="text-center">Realizeaza o programare frizerie</h1>
                     </div>
                     <form method="post">
                         {% csrf_token %}
-                        <div class="card-body" style="background: lightseagreen">
+                        <div class="card-body">
                             {{ form }}
                         </div>
-                        <div class="card-footer text-center" style="background: lightskyblue">
+                        <div class="card-footer text-center">
                             <button type="submit" class="btn btn-outline-success">Save</button>
+                            <a href="{% url 'home' %}" class="btn btn-outline-danger">Cancel</a>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+    <video src="{% static 'barber4.mp4' %}" class="barber" type="video/mp4" controls autoplay></video>
+    <style>
+        .barber {
+            display: flex;
+            max-width: 90%;
+            position: fixed;
+            left: 0;
+            top: 50px;
+            min-height: 100%;
+            min-width: 100%;
+            z-index: -1;
+        
+        }
+        .card {
+            background: transparent;
+            margin-top: 10vh;
+            padding: 30px 10px;
+            margin-left: 30px;
+            color: white;
+            border: 3px solid black;
+        }
+        body{
+            background: gray;
+        }
+    </style>
 {% endblock %}

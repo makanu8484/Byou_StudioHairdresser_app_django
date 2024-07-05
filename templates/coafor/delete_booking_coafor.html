@@ -1,20 +1,19 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %} Delete booking coafor {% endblock %}
 
 {% block content %}
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-6 offset-md-3 gy-5">
-                <div class="card">
-                    <div class="card-header">
+            <div class="col-sm-12 col-md-6 offset-md-3 gy-5">
+                <div class="card" style="background: transparent; box-sizing: border-box; border: 2px solid black">
+                    <div class="card-header" >
                         <h3 class="text-center">Sterge o programarea</h3>
                     </div>
                     <form method="post">
                         {% csrf_token %}
                         <div class="card-body">
-                            <h3 class="text-center">Sunteti sigur ca doriti sa stregeti programarea {{ rezervare.id }}
-                                ?</h3>
+                            <h3 class="text-center">Sunteti sigur ca doriti sa stregeti programarea ?</h3>
                         </div>
                         <div class="card-footer text-center">
                             <button class="btn btn-outline-danger">Yes</button>
@@ -25,5 +24,23 @@
             </div>
         </div>
     </div>
+    <img src="{% static 'poza.png' %}" class=" img-fluid delete-page" alt="poza">
+    
+    <style>
+    .delete-page{
+        display: flex;
+        width: 100%;
+        height: 200vh;
+        position: fixed;
+        z-index: -5;
+        top: 9.5vh;
+        background-size: cover;
+    }
+    
+    .delete-page{
+          background: rgba(0, 0, 0, 0.1) !important; 
+    }
+    
+    </style>
 
 {% endblock %}

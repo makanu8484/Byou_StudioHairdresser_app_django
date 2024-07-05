@@ -5,26 +5,41 @@
 
 {% block content %}
 
+    <div class="container-fluid>">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 offset-md-3">
 
-    <div class="container-fluid text-center video">
-        <video src="{% static 'video_1.mp4' %}" class="interactive-img" type="video/mp4" controls autoplay></video>
+
+                <div class="container-fluid text-center video">
+                    <video src="{% static 'video3.mp4' %}" class="interactive-img" type="video/mp4" controls
+                           autoplay></video>
+
+                </div>
+            </div>
+        </div>
 
     </div>
-    
-    
     <style>
-    .interactive-img {
-        border: 1px solid rosybrown;
-        width: 100%;
-        height: 850px;
-        
-     
-        
-        
-       
-    }
-    
-    
-</style>
+        .interactive-img {
+         
+           max-width: 90%;
+            position: fixed;
+            left: 0;
+            top: 50px;
+            min-height: 100%;
+            min-width: 100%;
+            z-index: -1;
+            
+        }
+           
+        .interactive-img {
+            background: rgba(0, 0, 0, 3) !important;
+
+        }
+        body{
+            background: rosybrown;
+        }
+
+    </style>
 {% endblock %}
 

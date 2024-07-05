@@ -26,22 +26,27 @@
         </div>
     </div>
     <div class="container-fluid text-center video">
-        <video src="{% static 'video3.mp4' %}" class="interactive" type="video/mp4" controls autoplay></video>
+        <video src="{% static 'video7.mp4' %}" class="interactive" type="video/mp4" controls autoplay></video>
     </div>
 
     <style>
         .interactive {
+            display: flex;
             max-width: 90%;
             position: fixed;
             left: 0;
-            top: 50px;
+            top: 0;
             min-height: 100%;
             min-width: 100%;
             z-index: -1;
         }
         .booking_form{
-            border: 2px solid black;
+            border: 2px solid white;
+            color: white;
             
+        }
+        body{
+            background: grey;
         }
         </style>
 
