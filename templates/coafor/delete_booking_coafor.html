@@ -17,28 +17,20 @@
                         </div>
                         <div class="card-footer text-center">
                             <button class="btn btn-outline-danger">Yes</button>
-                            <a href="{% url "list_booking_coafor" %}" class="btn btn-outline-success">No</a>
+                            <a href="{% url "list_booking_coafor" %}" class="btn btn-outline-warning">No</a>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    <img src="{% static 'poza.png' %}" class=" img-fluid delete-page" alt="poza">
+    
     
     <style>
-    .delete-page{
-        display: flex;
-        width: 100%;
-        height: 200vh;
-        position: fixed;
-        z-index: -5;
-        top: 9.5vh;
-        background-size: cover;
-    }
     
-    .delete-page{
-          background: rgba(0, 0, 0, 0.1) !important; 
+    
+    body{
+        background: grey;
     }
     
     </style>

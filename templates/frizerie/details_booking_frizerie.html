@@ -1,24 +1,47 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %} Frizerie booking details {% endblock %}
 
 {% block content %}
     <div class="container-fluid">
-         <div class="card text-center">
+        <div class="card text-center">
             <div class="card-header">
                 Frizerie booking details
             </div>
             <div class="card-body">
                 <h5 class="card-title">{{ frizerie.full_name }}</h5>
-                <p class="card-text"> Booking date: {{ frizerie.booking_date }} - Booking time: {{ frizerie.booking_time }}<br>
+                <p class="card-text"> Booking date: {{ frizerie.booking_date }} - Booking
+                    time: {{ frizerie.booking_time }}<br>
                     Notes: {{ frizerie.notes }}</p>
                 <a href="{% url 'home' %}" class="btn btn-primary">Cancel</a>
             </div>
-            
+
             <div class="card-footer text-body-secondary">
                 Creat la: {{ frizerie.created_at|date:'d-m-Y H:i:s' }} /
                 Update la: {{ frizerie.updated_at|date:'d-m-Y H:i:s' }}
             </div>
         </div>
     </div>
+    
+    <style>
+   
+    .card{
+        margin-top: 50px;
+        display: flex;
+        border: 3px solid black;
+        background: grey;
+        font-weight: bolder;
+        
+    }
+    
+    .card-title{
+        color: darkred;
+    }
+    body{
+        background-color: gray;
+       
+    }
+    
+    </style>
+    
 {% endblock %}

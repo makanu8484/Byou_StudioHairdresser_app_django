@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %} Delete booking frizerie {% endblock %}
 
@@ -6,23 +7,34 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 offset-md-3 gy-5">
-                <div class="card">
+                <div class="card" style="background: transparent; box-sizing: border-box; border: 2px solid black">
                     <div class="card-header">
                         <h3 class="text-center">Sterge o programare</h3>
                     </div>
                     <form method="post">
                         {% csrf_token %}
                         <div class="card-body">
-                            <h2 class="text-center">Sunteti sigur ca doriti sa stergeti programarea {{ rezervare.id }}? </h2>
+                            <h2 class="text-center">Sunteti sigur ca doriti sa stergeti
+                                programarea {{ rezervare.id }}? </h2>
                         </div>
                         <div class="card-footer text-center">
                             <button type="submit" class="btn btn-outline-danger">Delete</button>
-                            <a href="{% url 'list_booking_frizerie' %}" class="btn btn-outline-success">Cancel</a>
+                            <a href="{% url 'list_booking_frizerie' %}" class="btn btn-outline-warning">Cancel</a>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+
     
+
+
+    <style>
+     body{
+        background: grey;
+    }
+      
+    </style>
+
 {% endblock %}

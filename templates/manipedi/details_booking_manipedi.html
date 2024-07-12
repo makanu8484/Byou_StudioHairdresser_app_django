@@ -5,21 +5,42 @@
 {% block content %}
     <div class="container-fluid">
         <div class="card text-center">
-            <div class="card-header" style="background: skyblue">
+            <div class="card-header">
                 <h2>Detaili programare Manichiura & Pedichiura</h2>
             </div>
-            <div class="card-body" style="background: violet">
-                <h3 class="card-title">Full name: {{ manipedi.full_name }}</h3>
+            <div class="card-body" >
+                <h5 class="card-title">{{ manipedi.full_name }}</h5>
                 <p class="card-text">Booking date: {{ manipedi.booking_date }}; Booking time: {{ manipedi.booking_time }} <br/>
                     <br>
                 Descriere: {{ manipedi.notes }}</p>
                 <a href="{% url 'list_booking_manipedi' %}" class="btn btn-primary">Cancel</a>
             </div>
-            <div class="card-footer text-body-secondary" style="background: skyblue">
+            <div class="card-footer text-body-secondary" >
                 Creat la: {{ manipedi.created_at }}
                 Update la : {{ manipedi.updated_at }}
             </div>
         </div>
 
     </div>
+    <style>
+   
+    .card{
+        margin-top: 50px;
+        display: flex;
+        border: 3px solid black;
+        background: grey;
+        font-weight: bolder;
+        
+    }
+    
+    .card-title{
+        color: darkred;
+    }
+    body{
+        background-color: gray;
+       
+    }
+    
+    </style>
+    
 {% endblock %}

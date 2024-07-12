@@ -49,27 +49,27 @@
             </li>
 
 
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown" style="font-family: Verdana,serif">
                 <a class="nav-link dropdown-toggle nav-style-costum" href="#" role="button" data-bs-toggle="dropdown"
                    aria-expanded="false">
                     Manichiura & Pedichiura
                 </a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="{% url 'create_booking_manipedi' %}">Fa o programare</a></li>
-                    <li><a class="dropdown-item" href="{% url 'list_booking_manipedi' %}">Lista programari</a></li>
+                <ul class="dropdown-menu" style="background: rosybrown">
+                    <li><a class="dropdown-item" href="{% url 'create_booking_manipedi' %}" style="color: deeppink">Fa o programare</a></li>
+                    <li><a class="dropdown-item" href="{% url 'list_booking_manipedi' %}" style="color: deeppink">Lista programari</a></li>
                 </ul>
             </li>
 
 
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown" style="font-family: Verdana,serif">
                 <a class="nav-link dropdown-toggle nav-style-costum" href="#" role="button" data-bs-toggle="dropdown"
                    aria-expanded="false">
                     Cosmetica & Makeup
                 </a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="{% url 'create_booking_cosmetica' %}">Fa o programare</a>
+                <ul class="dropdown-menu"  style="background: rosybrown">
+                    <li><a class="dropdown-item" href="{% url 'create_booking_cosmetica' %}" style="color: deeppink">Fa o programare</a>
                     </li>
-                    <li><a class="dropdown-item" href="{% url 'list_cosmetica' %}">Lista programari</a></li>
+                    <li><a class="dropdown-item" href="{% url 'list_cosmetica' %}" style="color: deeppink">Lista programari</a></li>
                 </ul>
             </li>
         {% endif %}
@@ -117,6 +117,7 @@
  <style>
         .nav-style-costum {
             transition: all 0.3s;
+            font-weight: bolder;
         }
 
         .nav-style-costum:hover {

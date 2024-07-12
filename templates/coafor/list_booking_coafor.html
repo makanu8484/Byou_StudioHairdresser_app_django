@@ -25,7 +25,7 @@
                     <tbody>
                     {% for rezervare in all_list_of_coafor %}
                         <tr>
-                            <td>{{ rezervare.full_name }}</td>
+                            <td style="color: green">{{ rezervare.full_name }}</td>
                             <td>{{ rezervare.booking_date|date:"d-m-Y" }}</td>
                             <td>{{ rezervare.booking_time|time:"H:i:s" }}</td>
                             <td>{{ rezervare.notes }}</td>
