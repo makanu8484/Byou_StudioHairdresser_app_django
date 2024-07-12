@@ -1,29 +1,51 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %} Update booking manipedi {% endblock %}
 
 {% block content %}
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-6 offset-md-3 gy-5">
+            <div class="col-md-6 offset-md-3 gy-3">
                 <div class="card">
                     <form method="post">
                         {% csrf_token %}
-                        <div class="card-header" style="background: skyblue">
+                        <div class="card-header">
                             <h3 class="text-center">Update booking Manichiura & Pedichiura</h3>
                         </div>
-                        <div class="card-body" style="background: darkkhaki">
+                        <div class="card-body">
                             {{ form }}
                         </div>
                         <div class="card-footer text-center">
                             <button type="submit" class="btn btn-outline-danger">Update</button>
-                            <a t href="{% url 'list_booking_manipedi' %}" class="btn btn-outline-success">Cancel</a>
+                            <a href="{% url 'list_booking_manipedi' %}" class="btn btn-outline-success">Cancel</a>
                         </div>
-                        
+
                     </form>
                 </div>
             </div>
         </div>
     </div>
+
+    <img src="{% static 'manipedi1.png' %}" class="img" alt="update"/>
+
+    <style>
+
+        .img {
+            min-height: 100%;
+            width: 100%;
+            height: auto;
+            position: fixed;
+            top: 1vh;
+            left: 0;
+            z-index: -1;
+        }
+
+        .card {
+            background: transparent;
+            margin-top: 6vh;
+            margin-left: 20px;
+            border: 3px solid black;
+        }
+    </style>
 
 {% endblock %}

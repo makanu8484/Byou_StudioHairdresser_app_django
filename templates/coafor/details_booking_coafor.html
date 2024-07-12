@@ -9,7 +9,7 @@
                 <h2>Coafor booking details</h2>
             </div>
             <div class="card-body">
-                <h5 class="card-title">{{ coafor.full_name }}</h5>
+                <h3 class="card-title">{{ coafor.full_name }}</h3>
                 <p class="card-text"> Booking date: {{ coafor.booking_date }} - Booking time: {{ coafor.booking_time }}<br>
                     Notes: {{ coafor.notes }}</p>
                 <a href="{% url 'home' %}" class="btn btn-danger">Cancel</a>

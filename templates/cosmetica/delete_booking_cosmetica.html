@@ -8,26 +8,29 @@ Detele booking cosmetica
 	<div class="container-fluid">
         <div class="row">
             <div class="col-md-6 offset-md-3 gy-5">
-                <div class="card">
-                    <div class="card-header " style="background: skyblue">
+                <div class="card" style="background: transparent; box-sizing: border-box; border: 2px solid black">
+                    <div class="card-header">
                         <h3 class="text-center">Sterge o programare cosmetica</h3>
                     </div>
                     <form method="post">
                         {% csrf_token %}
-                        <div class="card-body" style="background: dimgrey">
-                            <h3 class="text-center" style="color: deeppink">Sunteti sigur ca doriti sa stergeti programare {{ list.id }} ?</h3>
+                        <div class="card-body">
+                            <h3 class="text-center">Sunteti sigur ca doriti sa stergeti programare {{ list.id }} ?</h3>
                         </div>
-                        <div class="card-header text-center" style="background: skyblue">
+                        <div class="card-header text-center">
                             <button type="submit" class="btn btn-outline-danger">Yes</button>
-                            <a href="{% url 'list_cosmetica' %}" class="btn btn-outline-success">No</a>
+                            <a href="{% url 'list_cosmetica' %}" class="btn btn-outline-info">No</a>
                         </div>
-                        
                     </form>
-                    
                 </div>
             </div>
         </div>
-        
-        
     </div>
+    
+      <style>
+     body{
+        background: grey;
+    }
+      
+    </style>
 {% endblock %}

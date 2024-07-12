@@ -7,15 +7,15 @@
         <div class="row">
             <div class="col-md-6 offset-md-3 gy-5">
                 <div class="card">
-                    <div class="card-header" style="background: #3875d7">
-                        <h1 class="text-center"style="color: orangered">Create a new User</h1>
+                    <div class="card-header">
+                        <h1 class="text-center">Create a new User</h1>
                     </div>
                     <form method="post">
                         {% csrf_token %}
-                        <div class="card-body" style="background: aquamarine">
+                        <div class="card-body">
                             {{ form }}
                         </div>
-                        <div class="card-footer text-center" style="background: lightgreen">
+                        <div class="card-footer text-center">
                             <button type="submit" class="btn btn-outline-primary">Save</button>
                             <a href="{% url 'login' %}" class="btn btn-outline-success">Cancel</a>
                         </div>
