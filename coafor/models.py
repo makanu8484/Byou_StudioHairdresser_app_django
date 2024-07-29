@@ -9,7 +9,6 @@ class Coafor(models.Model):
     booking_time = models.TimeField()
     notes = models.TextField(max_length=400)
 
-
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
